@@ -7,6 +7,10 @@ const animals = { cats: [], dogs: [], birds: [] };
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/status", (req, res) => {
+  res.send({ status: "OK" });
+});
+
 app.post("/animals/:type", (req, res) => {
   const { type } = req.params;
   const animal = req.body;
